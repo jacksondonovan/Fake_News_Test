@@ -1,0 +1,20 @@
+.indicate{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px 20px;
+  color:blue;
+}
+.circleBase {
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+}
+
+.type1 {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    background: #ADD8E6;
+    border: 3px solid white;
+}
