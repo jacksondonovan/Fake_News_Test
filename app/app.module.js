@@ -17,6 +17,10 @@ var app = angular.module('fakenews',["ngRoute"])
                      templateUrl:'templates/stepthree.html',
                      controller:'stepthreeCTRL'
                    })
+                   .when('/test',{
+                     templateUrl:'templates/test.html',
+                     controller:'testCTRL'
+                   })
                    .otherwise({
                      redirectTo:'/home'
                    })
@@ -39,4 +43,54 @@ var app = angular.module('fakenews',["ngRoute"])
                  })
                  .controller('stepthreeCTRL',function($scope){
                    $scope.title = 'Ready?'
+                 })
+                 .controller('testCTRL',function($scope){
+                   $scope.score = 0
+                   $scope.allNews = []
+                   $scope.fakenews = [
+                     {
+                       title:'Headline Placeholder',
+                       source:'exampleOnlinePublisher',
+                       image:'http://www.slate.com/content/dam/slate/blogs/the_slatest/2016/04/10/boston_globe_publishes_fake_front_page_imagining_a_trump_presidency/bostonglobetrumpfakefrontpage.jpg.CROP.promovar-mediumlarge.jpg',
+                       status:false
+                     },
+                     {
+                       title:'Trump Gets Lost In PR',
+                       source:'exampleOnlinePublisher',
+                       image:'http://www.slate.com/content/dam/slate/blogs/the_slatest/2016/04/10/boston_globe_publishes_fake_front_page_imagining_a_trump_presidency/bostonglobetrumpfakefrontpage.jpg.CROP.promovar-mediumlarge.jpg',
+                       status:false
+                     }
+                   ]
+                   $scope.realnews = [
+                     {
+                       title:'Armstrong Lands on Moon',
+                       source:'exampleOnlinePublisher',
+                       image:'#',
+                       status:true
+                     },
+                     {
+                       title:'Rockies lose WC',
+                       source:'exampleOnlinePublisher',
+                       image:'#',
+                       status:true
+                     }
+                   ]
+                   $scope.leftdisplay = $scope.allNews[Math.floor(Math.random()*$scope.allNews.length)]
+                   $scope.flagleft = function(){
+                     $scope.leftguess = false;
+                     console.log('something');
+                   }
+                   $scope.rightdisplay = $scope.allNews[Math.floor(Math.random()*$scope.allNews.length)]
+                   $scope.flagright = function(){
+                     $scope.rightguess = false;
+                     console.log('rightside');
+                   }
+                   $scope.check = function(){
+                     if($scope.leftguess === $scope.leftdisplay.status){
+                       $scope.score++
+                     }
+                     if($scope.rightguess === $scope.rightdisplay.status){
+                       $scope.score++
+                     }
+                   }
                  })
