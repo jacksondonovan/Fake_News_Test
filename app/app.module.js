@@ -46,7 +46,32 @@ var app = angular.module('fakenews',["ngRoute"])
                  })
                  .controller('testCTRL',function($scope){
                    $scope.score = 0
-                   $scope.allNews = []
+                   $scope.allNews = [
+                     {
+                       title:'Headline Placeholder',
+                       source:'exampleOnlinePublisher',
+                       image:'http://www.slate.com/content/dam/slate/blogs/the_slatest/2016/04/10/boston_globe_publishes_fake_front_page_imagining_a_trump_presidency/bostonglobetrumpfakefrontpage.jpg.CROP.promovar-mediumlarge.jpg',
+                       status:false
+                     },
+                     {
+                       title:'Trump Gets Lost In PR',
+                       source:'exampleOnlinePublisher',
+                       image:'http://www.slate.com/content/dam/slate/blogs/the_slatest/2016/04/10/boston_globe_publishes_fake_front_page_imagining_a_trump_presidency/bostonglobetrumpfakefrontpage.jpg.CROP.promovar-mediumlarge.jpg',
+                       status:false
+                     },
+                     {
+                       title:'Armstrong Lands on Moon',
+                       source:'exampleOnlinePublisher',
+                       image:'#',
+                       status:true
+                     },
+                     {
+                       title:'Rockies lose WC',
+                       source:'exampleOnlinePublisher',
+                       image:'#',
+                       status:true
+                     }
+                   ]
                    $scope.fakenews = [
                      {
                        title:'Headline Placeholder',
@@ -75,6 +100,9 @@ var app = angular.module('fakenews',["ngRoute"])
                        status:true
                      }
                    ]
+                   $scope.allNews.concat($scope.realnews)
+                   $scope.allNews.concat($scope.fakenews)
+                   console.log($scope.allNews);
                    $scope.leftdisplay = $scope.allNews[Math.floor(Math.random()*$scope.allNews.length)]
                    $scope.flagleft = function(){
                      $scope.leftguess = false;
