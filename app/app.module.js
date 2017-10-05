@@ -23,6 +23,16 @@ var app = angular.module('fakenews',["ngRoute"])
                  })
                  .controller('homeCTRL',function($scope){
                    $scope.title = 'Jackson'
+                   $scope.leaders = [
+                     {name:'Jackson',score:100},
+                     {name:'Bonn',score:40},
+                     {name:'Cass',score:30},
+                     {name:'Ian',score:10},
+                     {name:'Tom',score:6}
+                   ]
+                   $scope.allLeaders = function(){
+                     return $scope.leaders.length;
+                   }
                  })
                  .controller('steptwoCTRL',function($scope){
                    $scope.title = 'Score'

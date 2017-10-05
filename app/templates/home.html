@@ -1,20 +1,38 @@
 <div class="container-fluid text-center">
   <div class="row content">
     <div class="col-sm-4 sidenav" style="height:600px;">
+      <div class="well">
+        <h2>Leader Board ({{allLeaders()}})</h2>
+      </div>
+      <div class="well">
+        <ul class="nostyle" ng-repeat="leader in leaders">
+          <div class="">
+            <li>{{leader.name}}</li>
+            <li>{{leader.score}}</li>
+            <br>
+          </div>
+
+        </ul>
+      </div>
 
     </div>
     <div class="col-sm-4 text-center">
       <h1>Welcome to</h1>
       <h2>Fake News Tester</h2>
       <br>
-      <h3>There's too much info now</h3>
+      <h3>The Internet Is Not Safe!</h3>
       <hr>
       <div class="">
         <img style="height:100px;width:120px;" src="http://palliativecarewa.asn.au/site/wp-content/uploads/2014/03/news-clip-art.png" alt="">
       </div>
       <hr>
 
-      <p>Can you spot fake news fast? Try this test!</p>
+      <p>Help get practicing flagging fake news</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <br>
       <br>
       <div class="indicate" align="center">
@@ -27,12 +45,25 @@
 
 
     </div>
-    <div class="col-sm-4 sidenav" style="height:600px;"
-        <p>{{title}}</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
+    <div class="col-sm-4 sidenav" style="height:600px;" align="center">
+        <div class="">
+          <h3>One hundred years ago, information was difficult to find.</h3>
+          <h4>Today, information is abundent.</h4>
+        </div>
+        <br>
+        <br>
+        <div class="well">
+          <img style="height:55px;width:55px;" src="https://image.flaticon.com/icons/png/512/49/49116.png" alt="">
+        </div>
+        <br>
+        <br>
+        <div class="">
+          <h4>Don't trust everything you hear.</h4>
+          <br>
+          <h4>Don't trust everything you see.</h4>
+          <br>
+          <h4>Don't trust everything.</h4>
+        </div>
+    </div>
     </div>
   </div>
-</div>
