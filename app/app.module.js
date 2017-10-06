@@ -17,6 +17,7 @@ var app = angular.module('fakenews',["ngRoute"])
                      templateUrl:'templates/stepthree.html',
                      controller:'stepthreeCTRL'
                    })
+                   //what if testCTRL instead of stepthreeCTRL. ngModel user name for leader board.
                    .when('/test',{
                      templateUrl:'templates/test.html',
                      controller:'testCTRL'
@@ -100,15 +101,15 @@ var app = angular.module('fakenews',["ngRoute"])
                        status:true
                      }
                    ]
-                   $scope.allNews.concat($scope.realnews)
-                   $scope.allNews.concat($scope.fakenews)
-                   console.log($scope.allNews);
+
+                   $scope.rightdisplay = $scope.allNews[Math.floor(Math.random()*$scope.allNews.length)]
                    $scope.leftdisplay = $scope.allNews[Math.floor(Math.random()*$scope.allNews.length)]
+                   $scope.leftguess = true;
+                   $scope.rightguess = true;
                    $scope.flagleft = function(){
                      $scope.leftguess = false;
                      console.log('something');
                    }
-                   $scope.rightdisplay = $scope.allNews[Math.floor(Math.random()*$scope.allNews.length)]
                    $scope.flagright = function(){
                      $scope.rightguess = false;
                      console.log('rightside');
@@ -120,5 +121,9 @@ var app = angular.module('fakenews',["ngRoute"])
                      if($scope.rightguess === $scope.rightdisplay.status){
                        $scope.score++
                      }
+                     $scope.leftguess = true;
+                     $scope.rightguess = true;
+                     $scope.leftdisplay = $scope.allNews[Math.floor(Math.random()*$scope.allNews.length)]
+                     $scope.rightdisplay = $scope.allNews[Math.floor(Math.random()*$scope.allNews.length)]
                    }
                  })
